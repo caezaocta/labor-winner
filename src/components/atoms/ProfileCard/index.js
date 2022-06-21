@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import BasicTextFields from "../TextFields";
-
+import DatePickers from "../DatePicker";
 const useStyles = makeStyles({
   root: {
     minWidth: 400
@@ -46,6 +46,7 @@ export default function ProfileCard(props) {
         <Typography className={classes.content} color="textSecondary">
           {props.thirdcontent}
         </Typography>
+        <DatePickers/>
                 </CardContent>
       <CardActions>
         <Button size="small">Save</Button>
