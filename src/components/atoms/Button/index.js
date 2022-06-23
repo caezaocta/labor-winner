@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import ButtonMui from '@mui/material/Button';
 
-const Button = ({ header }) => {
+const Button = ({ buttonText }) => {
     return (
         <>
-            <ButtonMui variant="contained">{header}</ButtonMui>
+            <ButtonMui variant="contained"> {buttonText} </ButtonMui>{' '}
         </>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;

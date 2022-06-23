@@ -1,16 +1,16 @@
 import Button from '../../components/atoms/Button'
-import AuthButton from '../../components/atoms/AuthButton'
+import ButtonAuth from '../../components/atoms/ButtonAuth'
 import Navbar from '../../components/organisms/Navbar'
 
-const LandingPage = () => {
+const Landing = () => {
     return (
         <>
             <Navbar></Navbar>
-            <Button header={"Search Now"}></Button>
+            <Button header="Search Now"></Button>
             <br />
-            <AuthButton header={"Log In"}></AuthButton>
+            <ButtonAuth header="Log In"></ButtonAuth>
         </>
     )
 }
 
-export default LandingPage;
+export default Landing;

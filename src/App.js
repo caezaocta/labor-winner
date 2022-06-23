@@ -1,10 +1,10 @@
 import './App.css';
-import LandingPage from '../src/pages/LandingPage'
+import Landing from '../src/pages/Landing'
 
 function App() {
   return (
     <div className="App">
-      <LandingPage />
+      <Landing />
     </div>
   );
 }
