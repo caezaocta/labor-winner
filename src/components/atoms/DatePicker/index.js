@@ -6,7 +6,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 export default function DatePickers() {
-  const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54Z"));
+  const [value, setValue] = React.useState(new Date());
 
   const handleChange = (newValue) => {
     setValue(newValue);
