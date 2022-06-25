@@ -1,10 +1,9 @@
-import React from 'react';
 import ButtonMui from '@mui/material/Button';
 
-const Button = ({ buttonText }) => {
+const Button = ({ buttonText, onClick }) => {
     return (
         <>
-            <ButtonMui variant="contained"> {buttonText} </ButtonMui>{' '}
+            <ButtonMui variant="contained" onClick={onClick}> {buttonText} </ButtonMui>{' '}
         </>
     );
 };
