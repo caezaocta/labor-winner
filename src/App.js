@@ -1,4 +1,4 @@
-import Landing from '../src/pages/Landing'
+import Login from '../src/pages/Login'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -21,7 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Landing />
+        <Login />
       </div>
     </ThemeProvider>
   );
