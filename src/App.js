@@ -1,7 +1,11 @@
-import Landing from '../src/pages/Landing'
+import * as React from 'react';
+import Landing from './pages/Landing'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'poppins'
+  },
   palette: {
     primary: {
       main: '#16609D',
@@ -18,10 +22,12 @@ const theme = createTheme({
 })
 
 function App() {
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Landing />
+        <Landing
+        />
       </div>
     </ThemeProvider>
   );
