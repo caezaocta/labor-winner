@@ -73,8 +73,8 @@ const Register = () => {
         event.preventDefault();
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = (event) => {
+        event.preventDefault()
 
         if (!email || !password) {
             setFlag(true)
