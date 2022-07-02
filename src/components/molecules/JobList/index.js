@@ -7,10 +7,12 @@ import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Box from '@mui/material/Box';
+import { CardActionArea } from '@mui/material';
 
 export default function List(props) {
     const listitems = joblist.map((joblist) => (
     <Card variant="outlined" sx={{ width : 500}}>
+      <CardActionArea href = "/">
       <CardContent >
       <Box sx={{display: 'flex'}}>
         <CardMedia sx={{pr: 2}} >
@@ -32,6 +34,7 @@ export default function List(props) {
         </Box>
         </Box>
       </CardContent>
+      </CardActionArea>
       <CardActions>
         <Button size="small">Apply</Button>
       </CardActions>
