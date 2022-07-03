@@ -1,124 +1,129 @@
-import Navbar from '../../components/organisms/Navbar';
-import Container from '@mui/material/Container'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
+import Navbar from '../../components/organisms/Navbar'
 import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import HeroImage from '../../assets/heroImage.png'
+import Partner from '../../assets/logo-bwa.png'
+import Partner1 from '../../assets/Partner1.png'
+import Partner2 from '../../assets/Partner2.png'
+import Partner3 from '../../assets/Partner3.png'
+import Avatar1 from '../../assets/Avatar1.png'
+import Avatar2 from '../../assets/Avatar2.png'
+import Avatar3 from '../../assets/Avatar3.png'
 import './styles.css'
-import HeroImage from '../../../src/assets/heroImage.png'
-import LogoBwa from '../../../src/assets/logo-bwa.png'
-import * as React from 'react';
-import CardActions from '@mui/material/CardActions';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 
-
-const bull = (
-    <Box
-        component="span"
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-        •
-    </Box>
-);
 
 const Landing = () => {
     return (
         <>
             <Navbar></Navbar>
 
-            <Container className="hero-section" id="hero-section">
-                <Box gridTemplateColumns="repeat(12, 1fr)" gap={2} sx={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center' }}>
-                    <Box gridColumn="span 6" sx={{ marginTop: 25 }}>
-                        <Typography variant="h3">
-                            Start your journey <span style={{ fontWeight: 'bold' }}>journey</span>
-                            <br />
-                            here
-                        </Typography>
-                        <Typography variant="subtitle" style={{ fontWeight: '200', fontSize: '25px' }}>
-                            We are here to find the most suitable jobs for you here
-                            <br />
-                            We also provide job seekers with top skills to prepare them
-                        </Typography>
-                    </Box>
-                    <Box gridColumn="span 6" sx={{ marginTop: 15 }}>
-                        <img src={HeroImage} alt="halo" style={{ width: 500 }} />
-                    </Box>
+            <Container id='hero-section'>
+                <Box sx={{ display: 'flex', justifyContent: 'space-around', marginTop: 10 }}>
+                    <Grid item xs={6}>
+                        <Typography variant="h3" sx={{ marginTop: 9, textAlign: 'left' }}>Join with us in <br /><span variant="h3" style={{ fontWeight: 'bold' }}>Labor Winner</span></Typography>
+                        <Typography variant="subtitle" sx={{ fontStyle: 'italic' }}>"We provide the best job seeking platfom for every job seekers out there"</Typography>
+                        <br />
+                        <Button variant="contained" sx={{ marginTop: 5 }}>Search Now!</Button>
+
+                    </Grid>
+                    <Grid item xs={6}>
+                        <img src={HeroImage} alt="" style={{ width: 400 }} />
+                        <Box sx={{ background: 'linear-gradient(90deg, rgba(113,136,255,1) 2%, rgba(35,174,159,1) 100%)', width: 300, height: 300, borderRadius: '50%', position: 'absolute', top: 150, right: 325, zIndex: '-1' }}></Box>
+                    </Grid>
                 </Box>
             </Container>
 
-            <Container className="testimonials-section" id="testimonials-section" sx={{ minHeight: "500px", marginTop: "128px" }}>
-                <Typography variant="h6" center sx={{ fontSize: 16, textAlign: 'center', marginBottom: 10 }}>
-                    <h1>Our partners</h1>
+            <Container id="ourPartners-section" sx={{ marginTop: 15 }}>
+                <Typography variant="h5" sx={{ textAlign: 'center', fontWeight: 'bold' }}>
+                    Our Partners
                 </Typography>
-
-                <Box gridTemplateColumns="repeat(12, 1fr)" gap={2} sx={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center' }}>
-                    <Card style={{ minWidth: 275, backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}>
-                        <CardMedia
-                            component="img"
-                            height="180"
-                            image={LogoBwa}
-                            alt="green iguana"
-                            style={{ borderRadius: '50%', textAlign: 'center' }}
-                        />
-                        <CardContent>
-                            <Typography sx={{ textAlign: 'center', fontSize: 16 }} color="text.primary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-
-                        </CardContent>
-                    </Card>
-                    <Card style={{ minWidth: 275, backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}>
-                        <CardMedia
-                            component="img"
-                            height="180"
-                            image={LogoBwa}
-                            alt="green iguana"
-                            style={{ borderRadius: '50%', textAlign: 'center' }}
-                        />
-                        <CardContent>
-                            <Typography sx={{ textAlign: 'center', fontSize: 16 }} color="text.primary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-
-                        </CardContent>
-                    </Card>
-                    <Card style={{ minWidth: 275, backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}>
-                        <CardMedia
-                            component="img"
-                            height="180"
-                            image={LogoBwa}
-                            alt="green iguana"
-                            style={{ borderRadius: '50%', textAlign: 'center' }}
-                        />
-                        <CardContent>
-                            <Typography sx={{ textAlign: 'center', fontSize: 16 }} color="text.primary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-
-                        </CardContent>
-                    </Card>
-                    <Card style={{ minWidth: 275, backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}>
-                        <CardMedia
-                            component="img"
-                            height="180"
-                            image={LogoBwa}
-                            alt="green iguana"
-                            style={{ borderRadius: '50%', textAlign: 'center' }}
-                        />
-                        <CardContent>
-                            <Typography sx={{ textAlign: 'center', fontSize: 16 }} color="text.primary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-
-                        </CardContent>
-                    </Card>
+                <Box sx={{ display: 'flex', justifyContent: 'space-around', marginTop: 5 }}>
+                    <Grid item xs={6}>
+                        <img className="ourpartners-img" src={Partner} alt="partner-img" style={{ width: 200 }} />
+                        <Typography variant="h6" sx={{ textAlign: 'center', fontSize: '16px', marginTop: '-16px' }}>
+                            Build With Angga
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <img className="ourpartners-img" src={Partner1} alt="partner-img" style={{ width: 200 }} />
+                        <Typography variant="h6" sx={{ textAlign: 'center', fontSize: '16px', marginTop: '-16px' }}>
+                            Kemendikbudristek RI
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <img className="ourpartners-img" src={Partner2} alt="partner-img" style={{ width: 200 }} />
+                        <Typography variant="h6" sx={{ textAlign: 'center', fontSize: '16px', marginTop: '-16px' }}>
+                            Amazon
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <img className="ourpartners-img" src={Partner3} alt="partner-img" style={{ width: 200 }} />
+                        <Typography variant="h6" sx={{ textAlign: 'center', fontSize: '16px', marginTop: '-16px' }}>
+                            Unilever Indonesia
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <img src={Partner1} alt="partner-img" style={{ width: 200 }} />
+                        <Typography variant="h6" sx={{ textAlign: 'center', fontSize: '16px', marginTop: '-16px' }}>
+                            Kemdikbudristek RI
+                        </Typography>
+                    </Grid>
                 </Box>
             </Container>
 
-            <Container className="ourpartners-section" id="ourpartners-section" sx={{ minHeight: "500px" }}>
-                <h1>Our partners</h1>
+            <Container id="testimonials-section" sx={{ marginTop: 15 }}>
+                <Typography variant="h5" sx={{ textAlign: 'center', fontWeight: 'bold' }}>
+                    Testimonials
+                </Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'space-around', marginTop: 5 }}>
+                    <Grid item xs={12}>
+                        <Card className="testimonial-card" sx={{ display: 'flex', padding: 5, justifyContent: 'space-between', alignItems: 'center', maxWidth: '800px', marginBottom: '32px' }}>
+                            <Grid item xs={6}>
+                                <img src={Avatar1} alt="testimonial1" style={{ width: '100px', borderRadius: '50%' }} />
+                            </Grid>
+                            <Grid item xs={6} sx={{ marginLeft: 4 }}>
+                                <Typography variant="h6" sx={{ fontSize: '16px', marginTop: '-16px', fontWeight: 'bold' }}>
+                                    Build With Angga
+                                </Typography>
+                                <Typography variant="subtitle" sx={{ fontSize: '16px', marginTop: '0px', fontStyle: 'italic' }}>
+                                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta possimus fugit quo repellat maiores dolorem, <br />
+                                    ratione natus ex, cum sint nihil laborum iste voluptatem laudantium beatae doloribus! Cumque, quod aperiam!""
+                                </Typography>
+                            </Grid>
+                        </Card>
+                        <Card className="testimonial-card" sx={{ display: 'flex', padding: 5, justifyContent: 'space-around', alignItems: 'center', maxWidth: '800px', marginBottom: '32px' }}>
+                            <Grid item xs={6}>
+                                <img src={Avatar2} alt="testimonial1" style={{ width: '100px', borderRadius: '50%' }} />
+                            </Grid>
+                            <Grid item xs={6} sx={{ marginLeft: 4 }}>
+                                <Typography variant="h6" sx={{ fontSize: '16px', marginTop: '-16px', fontWeight: 'bold' }}>
+                                    Build With Angga
+                                </Typography>
+                                <Typography variant="subtitle" sx={{ fontSize: '16px', marginTop: '0px', fontStyle: 'italic' }}>
+                                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta possimus fugit quo repellat maiores dolorem, ratione natus ex, cum sint nihil laborum iste voluptatem laudantium beatae doloribus! Cumque, quod aperiam!""
+                                </Typography>
+                            </Grid>
+                        </Card>
+                        <Card className="testimonial-card" sx={{ display: 'flex', padding: 5, justifyContent: 'space-around', alignItems: 'center', maxWidth: '800px', marginBottom: '32px' }}>
+                            <Grid item xs={6}>
+                                <img src={Avatar3} alt="testimonial1" style={{ width: '100px', borderRadius: '50%' }} />
+                            </Grid>
+                            <Grid item xs={6} sx={{ marginLeft: 4 }}>
+                                <Typography variant="h6" sx={{ fontSize: '16px', marginTop: '-16px', fontWeight: 'bold' }}>
+                                    Build With Angga
+                                </Typography>
+                                <Typography variant="subtitle" sx={{ fontSize: '16px', marginTop: '0px', fontStyle: 'italic' }}>
+                                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta possimus fugit quo repellat maiores dolorem, ratione natus ex, cum sint nihil laborum iste voluptatem laudantium beatae doloribus! Cumque, quod aperiam!""
+                                </Typography>
+                            </Grid>
+                        </Card>
+                    </Grid>
+
+                </Box>
             </Container>
 
         </>
