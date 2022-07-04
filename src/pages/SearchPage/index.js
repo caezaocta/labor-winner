@@ -1,15 +1,14 @@
-import React from 'react'
-import FavButton from '../../components/atoms/FavButton'
+import Navbar from '../../components/organisms/Navbar'
 import Footer from '../../components/molecules/Footer';
-
-
-function LandingPage() {
+import List from '../../components/molecules/JobList';
+const Search = () => {
     return (
         <>
-            <FavButton ></FavButton>
+            <Navbar></Navbar>
+            <List></List>
             <Footer></Footer>
         </>
-    )
-}
+    );
+};
 
-export default LandingPage;
+export default Search;

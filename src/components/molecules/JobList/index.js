@@ -7,12 +7,26 @@ import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Box from '@mui/material/Box';
-import { CardActionArea } from '@mui/material';
+import {Link} from 'react-router-dom'
 
 export default function List(props) {
     const listitems = joblist.map((joblist) => (
     <Card variant="outlined" sx={{ width : 500}}>
-      <CardActionArea href = "/">
+      <Link to={{
+        pathname: `/search-page/${joblist.name}`,
+        state: {  name :joblist.name ,
+                  title :joblist.title,
+                  salary : joblist.salary,
+                  qualification:joblist.qualification,
+                  skill:joblist.skill,
+                  company:joblist.company,
+                  joblevel:joblist.level,
+                  desc:joblist.desc,
+                  image_url:joblist.image_url,
+                  location:joblist.location,
+                  skills:joblist.skills
+                }}} 
+        style={{ textDecoration: 'none' }} >
       <CardContent >
       <Box sx={{display: 'flex'}}>
         <CardMedia sx={{pr: 2}} >
@@ -22,10 +36,10 @@ export default function List(props) {
         <Typography sx={{ fontSize: 20 }} color="primary" gutterBottom>
           {joblist.name}
         </Typography>
-        <Typography sx={{ fontSize: 16 }} variant="body2">
+        <Typography sx={{ fontSize: 16 }} variant="body2" color="black">
           {joblist.title}
         </Typography>
-        <Typography sx={{ fontSize: 10 }} variant="body2">
+        <Typography sx={{ fontSize: 10 }} variant="body2" color="black">
           {joblist.desc}
         </Typography>
         <Typography sx={{ fontSize: 14, pt: 1, color :"green" }} variant="body2">
@@ -34,12 +48,11 @@ export default function List(props) {
         </Box>
         </Box>
       </CardContent>
-      </CardActionArea>
       <CardActions>
         <Button size="small">Apply</Button>
       </CardActions>
+      </Link>
     </Card>
   ));
   return <div>{listitems}</div>;
 }
-
