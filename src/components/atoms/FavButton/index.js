@@ -7,10 +7,9 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 const useStyles = makeStyles({
   fav : {    
-  margin: 'auto',
+  
   display: 'block',
-  width: 'fit-content'
-  }
+    }
 });
 
 export default function FavButton() {
