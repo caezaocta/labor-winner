@@ -1,9 +1,18 @@
 import Navbar from '../../components/organisms/Navbar'
+import { Redirect } from 'react-router-dom'
 
-const Landing = () => {
+const Landing = ({ authorized }) => {
+    if (!authorized) {
+        return <Redirect to="/login"></Redirect>
+    }
+
+    const loggedInData = JSON.parse(localStorage.getItem('active-data')) || []
     return (
         <>
-            <Navbar></Navbar>
+            {loggedInData
+                ? <Navbar userLoggedIn="user" />
+                : <Navbar userLoggedIn="Login" />
+            }
         </>
     );
 };

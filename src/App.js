@@ -3,6 +3,7 @@ import Login from '../src/pages/Login'
 import Register from '../src/pages/Register'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useState } from 'react'
+import Routes from '../src/routes'
 
 const theme = createTheme({
   palette: {
@@ -24,8 +25,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Register />
-        {/* <Login /> */}
+        <Routes></Routes>
       </div>
     </ThemeProvider>
   );

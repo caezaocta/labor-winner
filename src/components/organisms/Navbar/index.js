@@ -5,9 +5,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../../../../src/assets/logo-laborwinner.png'
 
-export default function Navbar() {
+export default function Navbar({ userLoggedIn }) {
+
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        < Box sx={{ flexGrow: 1 }
+        }>
             <AppBar position="static" sx={{ padding: 1 }}>
 
                 <Toolbar>
@@ -24,7 +26,7 @@ export default function Navbar() {
                         <Button color="inherit">Testimonial</Button>
                         <Button color="inherit">Contact Us</Button>
                     </Box>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit">{userLoggedIn}</Button>
                 </Toolbar>
 
             </AppBar >

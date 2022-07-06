@@ -72,89 +72,96 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        let email = localStorage.getItem('Email').replace(/"/g, "");
-        let password = localStorage.getItem('Password').replace(/"/g, "");
+        const registeredData = JSON.parse(localStorage.getItem('register-data')) || []
 
-        if (!emailLog || !passwordLog) {
-            setFlag(true)
-            console.log('Empty');
-        } else if (emailLog !== email || passwordLog !== password) {
-            setFlag(true)
-        } else {
+        const loginData = registeredData.filter(data => data.email === emailLog && data.password === passwordLog)
+
+        if (loginData.length) {
+            localStorage.setItem('active-data', JSON.stringify(loginData[0]))
             setHome(!home)
             setFlag(false)
+        } else {
+            setFlag(true)
         }
+
+
+        // if (!emailLog || !passwordLog) {
+        //     setFlag(true)
+        //     console.log('Empty');
+        // } else if (emailLog !== email || passwordLog !== password) {
+        //     setFlag(true)
+        // } else {
+        //     setHome(!home)
+        //     setFlag(false)
+        // }
     }
 
 
 
     return (
         <>
-            {
-                home ? (
-                    <Box sx={{ display: 'flex', justifyContent: 'center' }} >
-                        <Card sx={{ minWidth: 600, padding: 5 }}>
-                            <CardContent sx={{ display: 'block' }}>
-                                <Typography sx={{ fontSize: 32, fontWeight: 'bold' }} component="div">
-                                    Welcome Back, buddy!
-                                </Typography>
-                                <Typography sx={{ fontSize: 16, fontWeight: 'light' }} component="div">
-                                    Please log in to you account.
-                                </Typography>
 
-                                <form onSubmit={handleLogin}>
-                                    <div>
-                                        <CustomInput
-                                            sx={{ marginTop: 5 }}
-                                            label="Email"
-                                            id="email"
-                                            type="email"
-                                            fullWidth
-                                            onChange={(e) => setEmailLog(e.target.value)}
+            <Box sx={{ display: 'flex', justifyContent: 'center' }} >
+                <Card sx={{ minWidth: 600, padding: 5 }}>
+                    <CardContent sx={{ display: 'block' }}>
+                        <Typography sx={{ fontSize: 32, fontWeight: 'bold' }} component="div">
+                            Welcome Back, buddy!
+                        </Typography>
+                        <Typography sx={{ fontSize: 16, fontWeight: 'light' }} component="div">
+                            Please log in to you account.
+                        </Typography>
 
-                                        />
-                                        <FormControl sx={{ marginTop: 2, }} variant="outlined" fullWidth>
-                                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                                            <OutlinedInput
+                        <form onSubmit={handleLogin}>
+                            <div>
+                                <CustomInput
+                                    sx={{ marginTop: 5 }}
+                                    label="Email"
+                                    id="email"
+                                    type="email"
+                                    fullWidth
+                                    onChange={(e) => setEmailLog(e.target.value)}
 
-                                                id="outlined-adornment-password"
-                                                type={values.showPassword ? 'text' : 'password'}
-                                                value={values.password}
-                                                onChange={handleChange('password')}
-                                                endAdornment={
-                                                    <InputAdornment position="end">
-                                                        <IconButton
-                                                            aria-label="toggle password visibility"
-                                                            onClick={handleClickShowPassword}
-                                                            onMouseDown={handleMouseDownPassword}
-                                                            edge="end"
-                                                        >
-                                                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                                        </IconButton>
-                                                    </InputAdornment>
-                                                }
-                                                label="Password"
-                                            />
-                                        </FormControl>
-                                    </div>
-                                    {flag && (
-                                        <Alert severity="error" fullWidth sx={{ marginTop: '20px' }}>
-                                            Please fill every field
-                                        </Alert>
-                                    )}
-                                    <CardActions>
-                                        <Button sx={{ marginTop: 6, height: '50px' }} variant="contained" fullWidth type='submit'>Login</Button>
-                                    </CardActions>
-                                </form>
+                                />
+                                <FormControl sx={{ marginTop: 2, }} variant="outlined" fullWidth>
+                                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                    <OutlinedInput
+
+                                        id="outlined-adornment-password"
+                                        type={values.showPassword ? 'text' : 'password'}
+                                        value={values.password}
+                                        onChange={handleChange('password')}
+                                        endAdornment={
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                    aria-label="toggle password visibility"
+                                                    onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
+                                                    edge="end"
+                                                >
+                                                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        }
+                                        label="Password"
+                                    />
+                                </FormControl>
+                            </div>
+                            {flag && (
+                                <Alert severity="error" fullWidth sx={{ marginTop: '20px' }}>
+                                    Please fill every field
+                                </Alert>
+                            )}
+                            <CardActions>
+                                <Button sx={{ marginTop: 6, height: '50px' }} variant="contained" fullWidth type='submit'>Login</Button>
+                            </CardActions>
+                        </form>
 
 
-                            </CardContent>
+                    </CardContent>
 
-                        </Card>
-                    </Box >
-                ) : (
-                    <Landing />
-                )}
+                </Card>
+            </Box >
+
         </>
     )
 }
