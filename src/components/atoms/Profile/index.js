@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-import { deepOrange, indigo, cyan, teal, green, blue, yellow, bluegrey } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 
 const DEFAULT_VALUE = {
   email: "",
@@ -18,11 +18,11 @@ export default function LetterAvatars() {
     <Stack direction="row-reverse" spacing={10}>
       <Avatar
         sx={{
-          bgcolor: teal[100],
+          bgcolor: blue[200],
           border: "0.2px solid white",
           color: "white",
-          width: 55,
-          height: 55,
+          width: 50,
+          height: 50,
           margin: 1
         }}
       >{profilePicture.email.charAt(0).toUpperCase()}
