@@ -6,7 +6,9 @@ const Search = () => {
         <>
             <Navbar></Navbar>
             <List></List>
-            <Footer></Footer>
+            <Footer
+                style={{ position: 'absolute', bottom: 0 }}
+            ></Footer>
         </>
     );
 };

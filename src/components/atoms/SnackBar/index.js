@@ -9,26 +9,45 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 export default function CustomizedSnackbars() {
-  const [open, setOpen] = React.useState(false);
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  });
 
-  const handleClick = () => {
-    setOpen(true);
+  const { vertical, horizontal, open } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState });
   };
 
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpen(false);
+  const handleClose = () => {
+    setState({ ...state, open: false });
   };
+
+
+  const buttons = (
+    <>
+      <Button onClick={handleClick({
+        vertical: 'top',
+        horizontal: 'right',
+      })}>Apply</Button>
+    </>
+  )
 
   return (
-    <Stack>
-      <Button onClick={handleClick}>
-       Apply
-      </Button>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+    <Stack >
+      {buttons}
+      <Snackbar
+        sx={{ width: '20%', marginTop: '-8px' }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical, horizontal }}
+        key={vertical + horizontal}
+
+
+      >
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           Apply Success!
         </Alert>

@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../../../../src/assets/logo-laborwinner.png'
+import { Link } from 'react-router-dom'
 
 export default function Navbar({ userLoggedIn }) {
 
@@ -21,7 +22,9 @@ export default function Navbar({ userLoggedIn }) {
                         </Button>
                     </Box>
                     <Box align="center" sx={{ flexGrow: 1 }}>
-                        <Button color="inherit">Search Job</Button>
+                        <Link to='/search-page' style={{ textDecoration: 'none', color: 'white' }}>
+                            <Button color="inherit">Search Job</Button>
+                        </Link>
                         <Button color="inherit">Our Partners</Button>
                         <Button color="inherit">Testimonial</Button>
                         <Button color="inherit">Contact Us</Button>

@@ -1,7 +1,6 @@
-import Navbar from '../../components/organisms/Navbar'
+import Navbar from '../../components/organisms/Navbar';
 import Footer from '../../components/molecules/Footer';
 import DetailCard from '../../components/molecules/JobDetail/Index';
-
 
 const Detail = () => {
     return (
