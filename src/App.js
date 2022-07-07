@@ -1,6 +1,8 @@
-import * as React from 'react';
-import Landing from './pages/Landing';
+import Login from '../src/pages/Login'
+import Register from '../src/pages/Register'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useState } from 'react'
+import Routes from '../src/routes'
 
 const theme = createTheme({
   typography: {
@@ -23,7 +25,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Landing />
+        <Routes></Routes>
       </div>
     </ThemeProvider>
   );
