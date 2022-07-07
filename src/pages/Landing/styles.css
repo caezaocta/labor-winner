@@ -1,0 +1,15 @@
+.testimonial-card {
+    transition: all 0.5s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.03);
+}
+
+.ourpartners-img {
+    transition: all 0.5s ease-in-out;
+}
+
+.ourpartners-img:hover {
+    transform: scale(1.1);
+}
