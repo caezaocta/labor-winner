@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../../../../src/assets/logo-laborwinner.png'
+import Profile from '../../atoms/Profile';
 
 export default function Navbar() {
     return (
@@ -25,6 +26,7 @@ export default function Navbar() {
                         <Button color="inherit">Contact Us</Button>
                     </Box>
                     <Button color="inherit">Login</Button>
+                    <Profile></Profile>
                 </Toolbar>
 
             </AppBar >
