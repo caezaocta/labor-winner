@@ -1,25 +1,17 @@
-import Navbar from '../../components/organisms/Navbar'
-import { Redirect } from 'react-router-dom'
-import { useState, } from 'react'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const Landing = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState('')
-    const loginData = JSON.parse(localStorage.getItem('active-data')) || []
-    console.log(loginData)
-    // setIsLoggedIn(loginData);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-    // if (loginData.length) {
-    //     // console.log('setIsLoggedIn');
-    //     setIsLoggedIn(loginData);
-    // }
-    return (
-        <>
-            {/* <Navbar></Navbar> */}
-            {
-                <Navbar />
-            }
-        </>
-    );
-};
-
-export default Landing;
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

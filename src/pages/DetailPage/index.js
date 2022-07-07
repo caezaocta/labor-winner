@@ -1,14 +1,16 @@
 import Navbar from '../../components/organisms/Navbar'
 import Footer from '../../components/molecules/Footer';
-import List from '../../components/molecules/JobList';
-const Search = () => {
+import DetailCard from '../../components/molecules/JobDetail/Index';
+
+
+const Detail = () => {
     return (
         <>
             <Navbar></Navbar>
-            <List></List>
+            <DetailCard></DetailCard>
             <Footer></Footer>
         </>
     );
 };
 
-export default Search;
+export default Detail;
