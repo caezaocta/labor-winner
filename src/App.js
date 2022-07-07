@@ -1,9 +1,9 @@
-import Detail from './pages/DetailPage';
+import * as React from 'react';
+import Login from '../src/pages/Login'
+import Register from '../src/pages/Register'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Landing from './pages/Landing';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Search from './pages/SearchPage';
-
+import { useState } from 'react'
+import Routes from '../src/routes'
 
 const theme = createTheme({
   palette: {
@@ -25,13 +25,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/search-page"  component={Search}/>
-            <Route path="/search-page/:name" component={Detail}/>
-          </Switch>
-        </Router>
+        <Routes></Routes>
       </div>
     </ThemeProvider>
   );
